@@ -7,7 +7,10 @@ window.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", () => {
     const rawText = textArea.value;
 
-    const array = rawText.split("\n");
+    const array = rawText.split("\n").filter((el) => {
+      if (el.includes("-")) return el;
+    });
+
     arrayNew = array.map((el) => {
       return el.split("-")[0].trim();
     });
