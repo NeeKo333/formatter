@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const textArea = document.querySelector(".textarea");
   const btn = document.querySelector(".btn");
+  const img = document.querySelector(".img");
 
   if (!textArea || !btn) return;
 
@@ -16,5 +17,11 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     textArea.value = arrayNew.join("\n");
+
+    img.classList.add("active");
+
+    setTimeout(() => {
+      img.classList.remove("active");
+    }, 200);
   });
 });
